@@ -12,6 +12,7 @@ jobs:
 
       - name: Build image
         run: |
+          cd core
           docker build -f Dockerfile.dev -t oqtopus-dev .
 
       - name: Save image
