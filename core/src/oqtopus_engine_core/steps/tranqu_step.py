@@ -122,6 +122,8 @@ class TranquStep(Step):
 
         start = time.perf_counter()
         response = await self._stub.Transpile(request)
+        if response.status != 0:
+            raise RuntimeError(response.message)
         elapsed_ms = (time.perf_counter() - start) * 1000.0
 
         logger.info(
