@@ -55,6 +55,4 @@ RUN --mount=type=cache,target=~/.cache/uv \
     uv sync --locked --no-dev
 
 # Run the application
-RUN uv sync --frozen --no-dev
-
 CMD [".venv/bin/python", "src/oqtopus_engine_core/app.py", "-c", "config/config.yaml", "-l", "config/logging.yaml"]
