@@ -10,8 +10,6 @@ ARG GID=1000
 
 # Install the project into `/app`
 WORKDIR /app
-RUN mkdir -p logs && chmod -R 777 logs
-RUN mkdir -p /shares/metrics && chmod 777 /shares/metrics
 
 # Install tools
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -55,4 +53,4 @@ RUN --mount=type=cache,target=~/.cache/uv \
     uv sync --locked --no-dev
 
 # Run the application
-CMD [".venv/bin/python", "src/oqtopus_engine_core/app.py", "-c", "config/config.yaml", "-l", "config/logging.yaml"]
+CMD ["uv", "run", "python", "src/oqtopus_engine_core/app.py", "-c", "config/config.yaml", "-l", "config/logging.yaml"]
