@@ -3,7 +3,7 @@ pipeline_executor:
   pipeline:
     - job_repository_update_step
     - multi_manual_step
-    - tranqu_step
+    - tranqu_step2
     - estimator_step
     - ro_error_mitigation_step
     - mp_auto_combining_step
