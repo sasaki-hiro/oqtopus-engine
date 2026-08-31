@@ -96,7 +96,7 @@ di_container:
 
     buffer_mp_auto_combining:
       _target_: oqtopus_engine_core.mp.auto_combining.MpAutoCombiningBuffer
-      combiner_address: ${COMBINER_ADDRESS, "localhost:52013"}
+      combiner_address: ${COMBINER_ADDRESS, "combiner_qulacs:6667"}
       grpc_options: *grpc_options
       monitor_interval_seconds: ${MP_AUTO_BUFFER_MONITOR_INTERVAL_SECONDS, 1}
       max_batch_size: ${MP_AUTO_BUFFER_MAX_BATCH_SIZE, 30}
