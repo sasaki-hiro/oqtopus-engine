@@ -58,7 +58,7 @@ di_container:
 
     device_fetcher:
       _target_: oqtopus_engine_core.fetchers.DeviceGatewayFetcher
-      gateway_address: ${GATEWAY_ADDRESS, "localhost:51021"}
+      gateway_address: ${GATEWAY_ADDRESS, "qpu-server:51021"}
       grpc_options: *grpc_options
       initial_interval_seconds: ${DEVICE_FETCHER_INITIAL_INTERVAL_SECONDS, 10}
       initial_backoff_max_seconds: ${DEVICE_FETCHER_INITIAL_BACKOFF_MAX_SECONDS, 60}
@@ -96,7 +96,7 @@ di_container:
 
     buffer_mp_auto_combining:
       _target_: oqtopus_engine_core.mp.auto_combining.MpAutoCombiningBuffer
-      combiner_address: ${COMBINER_ADDRESS, "localhost:52013"}
+      combiner_address: ${COMBINER_ADDRESS, "combiner:6666"}
       grpc_options: *grpc_options
       monitor_interval_seconds: ${MP_AUTO_BUFFER_MONITOR_INTERVAL_SECONDS, 1}
       max_batch_size: ${MP_AUTO_BUFFER_MAX_BATCH_SIZE, 30}
