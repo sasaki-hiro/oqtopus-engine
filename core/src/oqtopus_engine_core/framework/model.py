@@ -75,7 +75,7 @@ class Job(BaseModel):
     device_id: str
     shots: int
     job_type: str
-    input: str
+    input: str | None = None
     program: list[str] | None = None
     operator: list[OperatorItem] | None = None
     sse_program: str | None = None
