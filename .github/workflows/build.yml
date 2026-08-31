@@ -1,0 +1,24 @@
+name: build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build image
+        run: |
+          cd estimator
+          docker build -t estimator -f Dockerfile.dev .
+      - name: Save image
+        run: |
+          docker save estimator | gzip > estimator.tar.gz
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: estimator
+          path: estimator.tar.gz
