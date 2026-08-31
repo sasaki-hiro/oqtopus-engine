@@ -64,7 +64,7 @@ di_container:
       initial_backoff_max_seconds: ${DEVICE_FETCHER_INITIAL_BACKOFF_MAX_SECONDS, 60}
       loop_interval_seconds: ${DEVICE_FETCHER_LOOP_INTERVAL_SECONDS, 60}
       loop_backoff_max_seconds: ${DEVICE_FETCHER_LOOP_BACKOFF_MAX_SECONDS, 300}
-      enable_device_info_update: ${DEVICE_FETCHER_ENABLE_DEVICE_INFO_UPDATE, true}
+      enable_device_info_update: ${DEVICE_FETCHER_ENABLE_DEVICE_INFO_UPDATE, false}
 
     # repository configurations
     _job_repository:
